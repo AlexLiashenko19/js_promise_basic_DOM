@@ -43,6 +43,5 @@ document.addEventListener('DOMContentLoaded', () => {
     body.appendChild(div);
   }
 
-  promise1.then(onSuccess).catch(onError);
-  promise2.then(onSuccess).catch(onError);
+  Promise.race([promise1, promise2]).then(onSuccess).catch(onError);
 });
